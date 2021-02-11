@@ -18,7 +18,7 @@ describe('The User model', () => {
   })
 
   it('should hash the user password before saving the database', async () => {
-    expect(Bcrypt.compareSync(user.password, createdUser.password)).toBe(true);
+       expect(Bcrypt.compareSync(user.password, createdUser.password)).toBe(true);
   });
 
 
