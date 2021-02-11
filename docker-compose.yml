@@ -1,0 +1,20 @@
+version: '3'
+services:
+  node-app:
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - /usr/api/node_modules
+      - .:/usr/api/
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /usr/api/node_modules
+      - .:/usr/api
+    command: ['yarn', 'test']
