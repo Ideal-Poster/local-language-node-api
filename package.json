@@ -7,12 +7,19 @@
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=local-language-node-api:* npm devstart"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
     "express": "~4.13.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "husky": "^5.0.9",
+    "nodemon": "^2.0.7",
+    "pretty-quick": "^3.1.0"
   }
 }
