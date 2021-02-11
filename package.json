@@ -8,11 +8,6 @@
     "serverstart": "DEBUG=local-language-node-api:* npm devstart",
     "test": "jest"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "~1.13.2",
@@ -26,10 +21,18 @@
     "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.13",
     "babel-jest": "^26.6.3",
-    "husky": "^5.0.9",
+    "husky": ">=4",
     "jest": "^26.6.3",
+    "lint-staged": ">=10",
     "nodemon": "^2.0.7",
-    "prettier": "^2.2.1",
-    "pretty-quick": "^3.1.0"
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
