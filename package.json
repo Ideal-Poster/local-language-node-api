@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=local-language-node-api:* npm devstart",
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --write src/**/*.{js,css}"
   },
   "husky": {
     "hooks": {
