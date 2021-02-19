@@ -1,8 +1,8 @@
+require('dotenv').config()
+let { db } = require('./db/utils')
 var express = require('express')
-var path = require('path')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
-let jwt = require('jsonwebtoken')
 
 var users = require('./routes/users')
 
@@ -12,6 +12,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 
-app.use('/api/v1/users', users)
+db.connect()
+
+app.use('/users', users)
 
 module.exports = app
